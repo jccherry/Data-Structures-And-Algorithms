@@ -63,6 +63,7 @@ class Dog:
 zoey = Dog("zoey", 10)
 zoey.displayAge()
 
+#gotten from online lol
 class Employee:
    'Common base class for all employees'
    empCount = 0
