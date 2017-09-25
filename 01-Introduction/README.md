@@ -1,4 +1,4 @@
-WEEKS 1-3: Introduction to Python
+Unit 01: Introduction to Python
 <br>
 Goals:
 <br>
