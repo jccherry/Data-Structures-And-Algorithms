@@ -1,4 +1,4 @@
-#Unit 3 - Dynamic Arrays, Linked Lists, and Python List implementation
+## Unit 3 - Dynamic Arrays, Linked Lists, and Python List implementation
 
 <b>Goals</b>
 <ul>
