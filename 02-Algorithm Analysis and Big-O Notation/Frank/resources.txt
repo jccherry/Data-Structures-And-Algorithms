@@ -1,0 +1,4 @@
+https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
+https://en.wikipedia.org/wiki/Big_O_notation
+https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity
+http://web.mit.edu/16.070/www/lecture/big_o.pdf
