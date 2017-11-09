@@ -1,0 +1,5 @@
+https://en.wikipedia.org/wiki/Heap_(data_structure)
+https://www.youtube.com/watch?v=GYAPIxiTjww
+https://cboard.cprogramming.com/c-programming/13203-what-stack-heap-queue.html
+http://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/
+https://web.stanford.edu/class/cs97si/03-data-structures.pdf
