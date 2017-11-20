@@ -187,12 +187,12 @@ for i in range(stack_length):
 '''
 
 #testing push to fill an empty stack
-for i in range(stack_length):
+for i in range(stack_length + stack_length //2):
     start_time = timeit.default_timer()
     linear_30_stack.push('Test Data')
     times_linear.append(timeit.default_timer() - start_time)
 
-for i in range(stack_length):
+for i in range(stack_length + stack_length //2):
     start_time = timeit.default_timer()
     circular_30_stack.push('Test Data')
     times_circular.append(timeit.default_timer() - start_time)
