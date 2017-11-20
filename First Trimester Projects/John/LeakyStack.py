@@ -168,7 +168,7 @@ for i in range(testing_operations):
     linear_30_stack.top()
     times_linear.append(timeit.default_timer() - start_time)
 '''
-
+'''
 #testing pop times
 #populating stacks 1.5x their length so that popping forces it to 'wrap around'
 for i in range(stack_length + stack_length // 2 ):
@@ -184,7 +184,18 @@ for i in range(stack_length):
     start_time = timeit.default_timer()
     circular_30_stack.pop()
     times_circular.append(timeit.default_timer() - start_time)
+'''
 
+#testing push to fill an empty stack
+for i in range(stack_length):
+    start_time = timeit.default_timer()
+    linear_30_stack.push('Test Data')
+    times_linear.append(timeit.default_timer() - start_time)
+
+for i in range(stack_length):
+    start_time = timeit.default_timer()
+    circular_30_stack.push('Test Data')
+    times_circular.append(timeit.default_timer() - start_time)
 
 plt.plot(times_linear, color = 'orange', label = 'Linear Implementation')
 plt.plot(times_circular, color = 'purple', label = 'Circular Implementation')
@@ -192,6 +203,6 @@ linear_patch = mpatches.Patch(color='orange', label='Linear Implementation')
 circular_patch = mpatches.Patch(color='purple', label='Circular Implementation')
 plt.legend(handles=[linear_patch, circular_patch])
 plt.ylabel('Time(s)')
-plt.xlabel('Pop Number')
-plt.title('Time vs. Pop Number | Stack Length = ' + str(stack_length))
+plt.xlabel('Push Number')
+plt.title('Time vs. Push Number | Stack Length = ' + str(stack_length))
 plt.show()
