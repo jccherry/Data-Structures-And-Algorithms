@@ -31,7 +31,7 @@ class Stack:
        #Raise Empty exception if the stack is empty. ”””
         if self.is_empty():
             raise Empty( Stack is empty )
-        return self. data.pop( ) # remove last item from list
+        return self.data.pop() # remove last item from list
 
 
 #using stacks to reverse a list
