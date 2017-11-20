@@ -41,3 +41,5 @@ For testing the efficiency of the ```pop``` function, I proceeded a bit differen
 For testing the efficiency of the ```top``` function, I knew that it should theoretically be the same every time, so i proceeded to run the exact same trial of ```stack.top()``` for a total of 1000 trials to observe any possible differences.
 
 <img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_top_trials.png" width="55%">
+
+## Discussion
