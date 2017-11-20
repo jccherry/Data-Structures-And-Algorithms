@@ -11,7 +11,7 @@ I found myself questioning the efficiency of the 'circular' design of the array 
 
 Each class has a series of functions indicative of a stack, but the only added difference is the 'Leaky' functionality due to the fixed size of the data stack:
 
-```
+```python
 push(self, element):
 	#pushes a new element to the top of the stack, and if the stack is full, 'Leaks' the oldest data
 top(self):
@@ -43,4 +43,15 @@ For testing the efficiency of the ```top``` function, I knew that it should theo
 <img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_top_trials.png" width="65%">
 
 ## Discussion
-My prediction for pushing to the stack is 
+My prediction for pushing to the stack was accurate, showing that there is a linear relationship between number of pushes (which should be a constant value) and time.  While there is obvious noise in the two graphs, the linear "bottom" is evident, and it can be seen that the slope of the circular implementation is lower than the slope of the linear implementation, showing that it will always be more efficient when pushing data to the stack.  The graph that depicts filling of an empty stack, with Push number vs Time, shows an always constant value for the circular implementation, but a high slope value for the linear implementation up until the stack is full, because the linear implementation always calls this lock of code if the stack is not full:
+```python
+for index in range(self.length):
+	if self.data[index] == None:
+        	self.data[index] = element
+        	break
+```
+Even though the Linear Implementation is less efficient, a perhaps more efficient way to get around this behaviour would be to implement some sort of index variable instead of looping through each entry.
+
+The prediction for the efficiency of the ```top``` function was mostly correct, but the Circular implementation was suprisingly more than twice as efficient than the linear implementation.  This is, of course, in fractions of fractions of fractions of seconds to the point where it is wholly insignificant.
+
+
