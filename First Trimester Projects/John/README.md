@@ -30,7 +30,7 @@ Because finding the 'top' value of the data list should be theoretically done in
 Popping the top value of the stack should again be more efficient with the circular design, taking O(3) time where the linear algorithm takes O(n-1) worst-case time when the stack is one away from being full and O(n-k) on average, where k is the amount of ```None``` objects in the data list.  If both stacks are full, they should each take the same amount of time, O(3)
 
 ## Testing and Methodology
-For testing the efficiency of the ```push``` function, I first populated a stack fully to take away the error caused from filling an empty stack.  Next, i crafted two identical loops to push an identical object ```n``` times, each time increasing ```n``` to a total of 1000 timed trials.
+For testing the efficiency of the ```push``` function, I first populated a stack fully to take away the error caused from filling an empty stack.  Next, i crafted two identical loops to push an identical object ```n``` times, each time increasing ```n``` to a total of 1000 timed trials.  I also tested the time it takes to fill an entire empty stack, and the following pushes after the stack is full
 
 <img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/fill_push.png" width="45%">
 
