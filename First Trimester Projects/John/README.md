@@ -12,12 +12,12 @@ I found myself questioning the efficiency of the 'circular' design of the array 
 Each class has a series of functions indicative of a stack, but the only added difference is the 'Leaky' functionality due to the fixed size of the data stack:
 
 ```
-	push(self, element):
-		#pushes a new element to the top of the stack, and if the stack is full, 'Leaks' the oldest data
-	top(self):
-		#returns the most recent push to the stack without removing it from the stack
-    	pop(self):
-    		#returns the most recent push to the stack and removes it from the stack
+push(self, element):
+	#pushes a new element to the top of the stack, and if the stack is full, 'Leaks' the oldest data
+top(self):
+	#returns the most recent push to the stack without removing it from the stack
+pop(self):
+    	#returns the most recent push to the stack and removes it from the stack
 ```
 I want to test the efficiency of these three functions for each of the class and compare them to one another
 
@@ -32,7 +32,7 @@ Popping the top value of the stack should again be more efficient with the circu
 ## Testing and Methodology
 For testing the efficiency of the ```push``` function, I first populated a stack fully to take away the error caused from filling an empty stack.  Next, i crafted two identical loops to push an identical object ```n``` times, each time increasing ```n``` to a total of 1000 timed trials.
 
-<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%">
+<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/fill_push.png" width="45%">
 
 For testing the efficiency of the ```pop``` function, I proceeded a bit differently.  First, I pushed to the stacks to 1.5x their length, so that they would have to 'loop back around.'  Next, I crafted two identical loops to ```pop``` the entirety of the stack, recording the time between each ```pop``` for a total number of 'trials' equal to that of the length of the stack.
 
@@ -40,6 +40,7 @@ For testing the efficiency of the ```pop``` function, I proceeded a bit differen
 
 For testing the efficiency of the ```top``` function, I knew that it should theoretically be the same every time, so i proceeded to run the exact same trial of ```stack.top()``` for a total of 1000 trials to observe any possible differences.
 
-<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_top_trials.png" width="55%">
+<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_top_trials.png" width="65%">
 
 ## Discussion
+My prediction for pushing to the stack is 
