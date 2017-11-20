@@ -1,7 +1,7 @@
 # John's First Trimester Project
 
 ## Introdution
-I decided, because I lack the background in recursion (as of now. I will study recursion first thing in the second trimester) necessary to implement trees effectively, that I would undertake a problem from Chapter 6, but I modified the prompt slightly to experiment and implement concepts from Algorithm Analysis and put it into practice.  The Original Prompt states:
+I decided, because I lack the background in recursion (as of now. I will study recursion first thing in the second trimester) necessary to implement trees effectively, that I would undertake a problem from Chapter 6, but I modified the prompt slightly to experiment and implement concepts from Chapters 3 and 5 and put it into practice.  The Original Prompt states:
 
 
 "The introduction of Section 6.1 notes that stacks are often used to provide “undo” support in applications like a Web browser or text editor. While support for undo can be implemented with an unbounded stack, many applications provide only limited support for such an undo history, with a fixed-capacity stack. When push is invoked with the stack at full capacity, rather than throwing a Full exception (as described in Exercise C-6.16), a more typical semantic is to accept the pushed element at the top while “leaking” the oldest element from the bottom of the stack to make room. Give an implementation of such a LeakyStack abstraction, using a circular array with appropriate storage capacity."
@@ -54,4 +54,5 @@ Even though the Linear Implementation is less efficient, a perhaps more efficien
 
 The prediction for the efficiency of the ```top``` function was mostly correct, but the Circular implementation was suprisingly more than twice as efficient than the linear implementation.  This is, of course, in fractions of fractions of fractions of seconds to the point where it is wholly insignificant.
 
+My prediction for the '''pop''' function was again mostly accurate.  Because of the way that python handles resizing lists in memory, removing a value from a list is done in O(n-k) time, where k is the position of the item removed, so as the stack pops more and more values and moves closer to an empty stack, the linear implementation gets closer to executing in O(n) worst-case time.  This could, like the ```top``` function, be improved on by adding in some sort of index variable. 
 
