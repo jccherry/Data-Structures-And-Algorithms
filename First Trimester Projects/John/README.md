@@ -31,12 +31,12 @@ Popping the top value of the stack should again be more efficient with the circu
 
 ## Testing and Methodology
 For testing the efficiency of the ```push``` function, I first populated a stack fully to take away the error caused from filling an empty stack.  Next, i crafted two identical loops to push an identical object ```n``` times, each time increasing ```n``` to a total of 1000 timed trials.
-<center>
+
 <img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%">
 
-
-</center>
-
 For testing the efficiency of the ```pop``` function, I proceeded a bit differently.  First, I pushed to the stacks to 1.5x their length, so that they would have to 'loop back around.'  Next, I crafted two identical loops to ```pop``` the entirety of the stack, recording the time between each ```pop``` for a total number of 'trials' equal to that of the length of the stack.
+
+<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_pop.png" width="45%">
+<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_pop_100.png" width="45%">
 
 For testing the efficiency of the ```top``` function, I knew that it should theoretically be the same every time, so i proceeded to run the exact same trial of ```stack.top``` for a total of 1000 trials to observe any differences.
