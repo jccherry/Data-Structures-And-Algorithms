@@ -54,5 +54,5 @@ Even though the Linear Implementation is less efficient, a perhaps more efficien
 
 The prediction for the efficiency of the ```top``` function was mostly correct, but the Circular implementation was suprisingly more than twice as efficient than the linear implementation.  This is, of course, in fractions of fractions of fractions of seconds to the point where it is wholly insignificant.
 
-My prediction for the '''pop''' function was again mostly accurate.  Because of the way that python handles resizing lists in memory, removing a value from a list is done in O(n-k) time, where k is the position of the item removed, so as the stack pops more and more values and moves closer to an empty stack, the linear implementation gets closer to executing in O(n) worst-case time.  This could, like the ```top``` function, be improved on by adding in some sort of index variable. 
+My prediction for the ```pop``` function was again mostly accurate.  Because of the way that python handles resizing lists in memory, removing a value from a list is done in O(n-k) time, where k is the position of the item removed, so as the stack pops more and more values and moves closer to an empty stack, the linear implementation gets closer to executing in O(n) worst-case time.  This could, like the ```top``` function, be improved on by adding in some sort of index variable. 
 
