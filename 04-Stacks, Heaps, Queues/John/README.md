@@ -1,0 +1,1 @@
+I created a python implementation of stacks using lists and did a problem from within the book, but much of my work for this unit is comprised in my [Final Trimester Project](https://github.com/jccherry/Data-Structures-And-Algorithms/tree/master/First%20Trimester%20Projects/John)
