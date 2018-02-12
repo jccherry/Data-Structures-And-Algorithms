@@ -1,7 +1,7 @@
 # John's First Trimester Project
 
 ## Introdution
-I decided, because I lack the background in recursion (as of now. I will study recursion first thing in the second trimester) necessary to implement trees effectively, that I would undertake a problem from Chapter 6, but I modified the prompt slightly to experiment.  The Original Prompt states:
+I decided, because I lack the background in recursion (as of now. I will study recursion first thing in the second trimester) necessary to implement trees effectively, that I would undertake a problem from Chapter 6, but I modified the prompt slightly to experiment and implement concepts from Chapters 3 and 5 and put it into practice.  The Original Prompt states:
 
 
 "The introduction of Section 6.1 notes that stacks are often used to provide “undo” support in applications like a Web browser or text editor. While support for undo can be implemented with an unbounded stack, many applications provide only limited support for such an undo history, with a fixed-capacity stack. When push is invoked with the stack at full capacity, rather than throwing a Full exception (as described in Exercise C-6.16), a more typical semantic is to accept the pushed element at the top while “leaking” the oldest element from the bottom of the stack to make room. Give an implementation of such a LeakyStack abstraction, using a circular array with appropriate storage capacity."
@@ -11,7 +11,7 @@ I found myself questioning the efficiency of the 'circular' design of the array 
 
 Each class has a series of functions indicative of a stack, but the only added difference is the 'Leaky' functionality due to the fixed size of the data stack:
 
-```
+```python
 push(self, element):
 	#pushes a new element to the top of the stack, and if the stack is full, 'Leaks' the oldest data
 top(self):
@@ -32,7 +32,7 @@ Popping the top value of the stack should again be more efficient with the circu
 ## Testing and Methodology
 For testing the efficiency of the ```push``` function, I first populated a stack fully to take away the error caused from filling an empty stack.  Next, i crafted two identical loops to push an identical object ```n``` times, each time increasing ```n``` to a total of 1000 timed trials.  I also tested the time it takes to fill an entire empty stack, and the following pushes after the stack is full
 
-<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/fill_push.png" width="45%">
+<img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_push_zoomed.png" width="45%"><img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/full_push.png" width="45%">
 
 For testing the efficiency of the ```pop``` function, I proceeded a bit differently.  First, I pushed to the stacks to 1.5x their length, so that they would have to 'loop back around.'  Next, I crafted two identical loops to ```pop``` the entirety of the stack, recording the time between each ```pop``` for a total number of 'trials' equal to that of the length of the stack.
 
@@ -43,4 +43,16 @@ For testing the efficiency of the ```top``` function, I knew that it should theo
 <img src="https://raw.githubusercontent.com/jccherry/Data-Structures-And-Algorithms/master/First%20Trimester%20Projects/John/Pictures/time_vs_top_trials.png" width="65%">
 
 ## Discussion
-My prediction for pushing to the stack is 
+My prediction for pushing to the stack was accurate, showing that there is a linear relationship between number of pushes (which should be a constant value) and time.  While there is obvious noise in the two graphs, the linear "bottom" is evident, and it can be seen that the slope of the circular implementation is lower than the slope of the linear implementation, showing that it will always be more efficient when pushing data to the stack.  The graph that depicts filling of an empty stack, with Push number vs Time, shows an always constant value for the circular implementation, but a high slope value for the linear implementation up until the stack is full, because the linear implementation always calls this lock of code if the stack is not full:
+```python
+for index in range(self.length):
+	if self.data[index] == None:
+        	self.data[index] = element
+        	break
+```
+Even though the Linear Implementation is less efficient, a perhaps more efficient way to get around this behaviour would be to implement some sort of index variable instead of looping through each entry.
+
+The prediction for the efficiency of the ```top``` function was mostly correct, but the Circular implementation was suprisingly more than twice as efficient than the linear implementation.  This is, of course, in fractions of fractions of fractions of seconds to the point where it is wholly insignificant.
+
+My prediction for the ```pop``` function was again mostly accurate.  Because of the way that python handles resizing lists in memory, removing a value from a list is done in O(n-k) time, where k is the position of the item removed, so as the stack pops more and more values and moves closer to an empty stack, the linear implementation gets closer to executing in O(n) worst-case time.  This could, like the ```top``` function, be improved on by adding in some sort of index variable. 
+
