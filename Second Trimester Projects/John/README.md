@@ -14,6 +14,9 @@ Both the username and password are unecrypted with non-reversable md5 hashing, a
 
 Excel through openpyxl was used to store the data to be used and reused, although if a similar implementation was to be actually used on something like a server backend, some sort of database would be better suited for this purpose, as the data is transfered into memory and then only saved at the end, or i would be able to implement live updating of the excel file if that was necessary.
 
+For instance, a user registered in the system is `FirstUser` with password `UserFirst`
+![image](https://github.com/jccherry/Data-Structures-And-Algorithms/blob/master/Second%20Trimester%20Projects/John/Screen%20Shot%202018-02-11%20at%208.22.31%20PM.png?raw=true)
+
 
 
 ### Required Libraries
